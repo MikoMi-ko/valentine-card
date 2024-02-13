@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2acac;;
+}
+
+input#open {
+    display: none;
+}
+
+.valentine-card {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transform: perspective(250px);
+    transition: .3s;
+}
+
+.card-front {
+    position: relative;
+    background-color: #fff0f3;
+    width: 400px;
+    height: 400px;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 30px 0 50px rgba(0,0,0,.3);
+    transition: .3s;
+}
+
+.card-front:before {
+    content: "";
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background-color: #eb6868;
+    top: 10px;
+    left: 10px;
+}
+
+.card-inside {
+    position: absolute;
+    background-color: #fff0f3;
+    width: 400px;
+    height: 400px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.22), 100px 20px 100px rgba(0,0,0,.1);
+}
+
+.open {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    z-index: 7;
+    cursor: pointer;
+}
+
+#open:checked ~ .card-front {
+    transform: rotateY(-178deg);
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+}
+
+#open:checked ~ .card-front:before {
+    z-index: 5;
+    background-color: #fff0f3;
+    width: 400px;
+    height: 400px;
+    top: 0;
+    left: 0;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.1), 30px 0 50px rgba(0,0,0,.1);
+}
+
+.note {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    top: 75px;
+    left: 50px;
+    color: #333;
+    background-color: #fff0f3;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.3));
+}
+
+.note:before, .note:after {
+    content: "";
+    position: absolute;
+    background-color: #ba1c1c;
+    width: 40px;
+    height: 40px;
+}
+
+.note:before {
+    transform: rotate(-45deg);
+    top: -20px;
+    left: 125px;
+}
+
+.note:after {
+    border-radius: 50%;
+    top:-35px;
+    left: 110px;
+    box-shadow: 30px 0 #ba1c1c;
+}
+
+.text-one {
+    position: absolute;
+    color: #333;
+    font-size: 15px;
+    top: 35px;
+    width: 400px;
+    text-align: center;
+}
+
+.text-two {
+    position: absolute;
+    color: #333;
+    font-size: 15px;
+    top: 55px;
+    width: 400px;
+    text-align: center;
+}
+
+.text-three {
+    position: absolute;
+    color: #333;
+    font-size: 30px;
+    top: 85px;
+    width: 400px;
+    text-align: center;
+}
+
+.image {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 180px;
+    height: 180px;
+    filter: drop-shadow(0 0 20px rgba(0,0,0,0.1));
+}
+
+.image:after {
+    content: "";
+    position: absolute;
+    background-color: #b9b9b9;
+    width: 40px;
+    height: 40px;
+    top:-25px;
+    left: 65px;
+    opacity: 0.3;
+}
+
+.image img {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+}
